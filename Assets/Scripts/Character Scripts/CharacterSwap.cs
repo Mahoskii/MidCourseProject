@@ -32,6 +32,7 @@ public class CharacterSwap : MonoBehaviour
                     car.SetActive(false);
                     bike.SetActive(true);
                     pedestrian.SetActive(false);
+                    bike.transform.position = car.transform.position;
                     break;
 
                 case 2:
@@ -39,6 +40,7 @@ public class CharacterSwap : MonoBehaviour
                     car.SetActive(false);
                     bike.SetActive(false);
                     pedestrian.SetActive(true);
+                    pedestrian.transform.position = bike.transform.position;
                     break;
 
                 case 3:
@@ -46,6 +48,7 @@ public class CharacterSwap : MonoBehaviour
                     car.SetActive(true);
                     bike.SetActive(false);
                     pedestrian.SetActive(false);
+                    car.transform.position = pedestrian.transform.position;
                     break;
             }
 
