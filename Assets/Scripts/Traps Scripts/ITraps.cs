@@ -6,6 +6,6 @@ using UnityEngine.Rendering;
 
 public interface ITraps
 {
-    void FailToPassTrap(TimeSpan Timer);
+    void FailToPassTrap();
 
 }
