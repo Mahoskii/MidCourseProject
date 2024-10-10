@@ -5,5 +5,5 @@ using UnityEngine;
 public interface ICharacter
 {
     void MovementAtUniqueSpeed(float Speed);
-    void OvercomeTrap();
+    void OvercomeTrap(Vector2 boop);
 }

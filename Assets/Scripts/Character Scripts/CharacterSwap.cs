@@ -7,7 +7,6 @@ public class CharacterSwap : MonoBehaviour
     public GameObject car, bike, pedestrian;
     int whichActive = 1;
 
-    // Start is called before the first frame update
     void Start()
     {
         car.SetActive(true);
@@ -20,11 +19,10 @@ public class CharacterSwap : MonoBehaviour
     {
         CharacterSwapping();
     }
-
     public void CharacterSwapping()
     {
         if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Space))
-        
+
             switch (whichActive)
             {
                 case 1:
