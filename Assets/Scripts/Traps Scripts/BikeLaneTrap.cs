@@ -5,8 +5,16 @@ using UnityEngine;
 
 public class BikeLaneTrap : MonoBehaviour, ITraps
 {
-    public void FailToPassTrap(TimeSpan Timer)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        throw new NotImplementedException();
+        if (collision.gameObject.CompareTag("Car") || collision.gameObject.CompareTag("Pedestrian"))
+        {
+            FailToPassTrap();
+        }
+    }
+
+    public void FailToPassTrap()
+    {
+        Timer.remainingTime -= 5;
     }
 }

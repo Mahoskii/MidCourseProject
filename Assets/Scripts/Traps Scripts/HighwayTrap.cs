@@ -1,13 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class HighwayTrap : MonoBehaviour, ITraps
 {
-    public void FailToPassTrap(TimeSpan Timer)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        throw new NotImplementedException();
+        if(collision.gameObject.CompareTag("Bike") || collision.gameObject.CompareTag("Pedestrian"))
+        {
+            FailToPassTrap();
+        }
+    }
+
+    public void FailToPassTrap()
+    {
+        Timer.remainingTime -= 5;
     }
 }
