@@ -27,7 +27,7 @@ public class PedestrianControls : MonoBehaviour, ICharacter
             Vector2 boop = boopDirection * boopForce;
             OvercomeTrap(boop);
         }
-        else
+        else if(collision.gameObject.CompareTag("RedLightTrap"))
         {
             collision.gameObject.SetActive(false);
         }
