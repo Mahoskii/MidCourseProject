@@ -5,8 +5,16 @@ using UnityEngine;
 
 public class RedLightTrap : MonoBehaviour, ITraps
 {
-    public void FailToPassTrap(TimeSpan Timer)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        throw new NotImplementedException();
+        if (collision.gameObject.CompareTag("Car") || collision.gameObject.CompareTag("Bike"))
+        {
+            FailToPassTrap();
+        }
+    }
+
+    public void FailToPassTrap()
+    {
+        CountDown.remainingTime -= 5;
     }
 }
