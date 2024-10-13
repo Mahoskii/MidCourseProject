@@ -27,7 +27,7 @@ public class BikeControls : MonoBehaviour, ICharacter
             Vector2 boop = boopDirection * boopForce;
             OvercomeTrap(boop);
         }
-        else
+        else if(collision.gameObject.CompareTag("BikeLaneTrap"))
         {
             collision.gameObject.SetActive(false);
         }

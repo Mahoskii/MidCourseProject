@@ -27,7 +27,7 @@ public class CarControls : MonoBehaviour, ICharacter
             Vector2 boop = boopDirection * boopForce;
             OvercomeTrap(boop);
         }
-        else
+        else if(collision.gameObject.CompareTag("HighwayTrap"))
         {
             collision.gameObject.SetActive(false);
         }
