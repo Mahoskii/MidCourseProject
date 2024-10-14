@@ -10,6 +10,7 @@ TagManager:
   - Car
   - Bike
   - Pedestrian
+  - Audio
   layers:
   - Default
   - TransparentFX
