@@ -12,10 +12,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip backround;
     public AudioClip car;
     public AudioClip pageFlip;
+    public AudioClip trapHit;
+
 
     private void Start()
     {
         musicSourse.clip = backround;
         musicSourse.Play();
+    }
+
+    public void PlaySFX (AudioClip clip)
+    {
+        SfxSourse.PlayOneShot (clip);
     }
 }

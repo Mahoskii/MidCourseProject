@@ -7,5 +7,6 @@ using UnityEngine.Rendering;
 public interface ITraps
 {
     void FailToPassTrap();
+   
 
 }
