@@ -1061,7 +1061,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FollowSpeed: 2
-  target: {fileID: 722554711}
+  characterArray:
+  - {fileID: 722554707}
+  - {fileID: 291646879}
+  - {fileID: 2098372801}
 --- !u!1 &1391451465
 GameObject:
   m_ObjectHideFlags: 0
