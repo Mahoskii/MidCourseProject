@@ -591,6 +591,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1911489015003305680, guid: 62c91416ae20fdb44a774440f98e25c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bec6e3d63f50b734abe51c09a2743cbe, type: 3}
     - target: {fileID: 6674924661665466047, guid: 62c91416ae20fdb44a774440f98e25c8, type: 3}
       propertyPath: m_Name
       value: Traps
