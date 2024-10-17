@@ -6,14 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   public void ExitGame()
+    
+
+
+    public void ExitGame()
     {
         UnityEngine.Application.Quit();
         Debug.Log("Game Closed");
+        
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene("PlayerControl");
+       
     }
 }

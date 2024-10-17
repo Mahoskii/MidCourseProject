@@ -2227,6 +2227,7 @@ MonoBehaviour:
   car: {fileID: 8300000, guid: fa76b8b8bb2cf064c94fba88fe36adeb, type: 3}
   pageFlip: {fileID: 8300000, guid: 63827248540fec947adbbeef23abb7f2, type: 3}
   trapHit: {fileID: 8300000, guid: 94ca53eb898d22b489ed68a33fba435e, type: 3}
+  menuSelect: {fileID: 8300000, guid: b6c4766504bc8d04897a92c69755605e, type: 3}
 --- !u!4 &2124614524
 Transform:
   m_ObjectHideFlags: 0

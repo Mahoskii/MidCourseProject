@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip car;
     public AudioClip pageFlip;
     public AudioClip trapHit;
+    public AudioClip menuSelect;
 
 
     private void Start()
