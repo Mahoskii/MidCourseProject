@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ICharacter : MonoBehaviour
 {
     bool facingRight = true;
-    public void MovementAtUniqueSpeed(float Speed, Rigidbody2D rb)
+    public void MovementAtUniqueSpeed(float Speed, Rigidbody2D rb, Animator animator, string animationName)
     {
         var dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.drag = 15;
@@ -18,6 +18,7 @@ public abstract class ICharacter : MonoBehaviour
         {
             SpriteFlip();
         }
+        animator.SetFloat(animationName, Mathf.Abs(dir.x));
     }
     public void TrapInteraction(Collision2D collision, Rigidbody2D rb, float boopForce, string TrapFail1, string TrapFail2, string TrapPass)
     {

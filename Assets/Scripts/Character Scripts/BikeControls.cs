@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BikeControls : ICharacter
 {
+    public Animator animator;
     public Rigidbody2D rb;
     float boopForce = 20f;
 
@@ -14,7 +15,7 @@ public class BikeControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(2000, rb);
+        MovementAtUniqueSpeed(2000, rb, animator, "bikeSpeed");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PedestrianControls : ICharacter
 {
+    public Animator animator;
     public Rigidbody2D rb;
     float boopForce = 15f;
 
@@ -14,7 +15,8 @@ public class PedestrianControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(1500, rb);
+        MovementAtUniqueSpeed(1500, rb, animator, "pedestrianSpeed");
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
