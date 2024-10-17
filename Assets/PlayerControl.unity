@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 291646882}
   - component: {fileID: 291646883}
   - component: {fileID: 291646884}
+  - component: {fileID: 291646885}
   m_Layer: 0
   m_Name: Bike
   m_TagString: Bike
@@ -353,7 +354,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c47f4742bb4cd4c8e30b78065deace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 291646885}
   rb: {fileID: 0}
+--- !u!95 &291646885
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291646879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4282a0c1949bbf54f906e4f3a28c3c2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &424825239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,6 +447,7 @@ GameObject:
   - component: {fileID: 722554708}
   - component: {fileID: 722554712}
   - component: {fileID: 722554713}
+  - component: {fileID: 722554714}
   m_Layer: 0
   m_Name: Car
   m_TagString: Car
@@ -582,7 +606,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4c82e48756ac646b6d615ebf6be984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 722554714}
   rb: {fileID: 0}
+--- !u!95 &722554714
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722554707}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bd8880cd76461c4aba98b3e1911418b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &884474725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2128,6 +2174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f5552cddfe31145b5fba94c0567ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2098372807}
   rb: {fileID: 0}
 --- !u!95 &2098372807
 Animator:
