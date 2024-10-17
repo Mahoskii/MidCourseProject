@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class ICharacter : MonoBehaviour
 {
-   static bool facingRight = true;
+    bool facingRight = true;
     public void MovementAtUniqueSpeed(float Speed, Rigidbody2D rb)
     {
         var dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
