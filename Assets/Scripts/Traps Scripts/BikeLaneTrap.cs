@@ -3,10 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-
-public class BikeLaneTrap : MonoBehaviour, ITraps
+public class BikeLaneTrap : ITraps
 {
     AudioManager audioManager;
     private void Awake()
@@ -15,18 +12,9 @@ public class BikeLaneTrap : MonoBehaviour, ITraps
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Car") || collision.gameObject.CompareTag("Pedestrian"))
-        {
-            FailToPassTrap();
-            audioManager.PlaySFX(audioManager.trapHit);
-        }
+        FailToPassTrap(collision, audioManager, "Car", "Pedestrian");
     }
 
-    public void FailToPassTrap()
-    {
-        CountDown.remainingTime -= 5;
-        
-    }
 }
 
 

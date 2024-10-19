@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class HighwayTrap : MonoBehaviour, ITraps
+public class HighwayTrap : ITraps
 {
     AudioManager audioManager;
     private void Awake()
@@ -14,15 +14,6 @@ public class HighwayTrap : MonoBehaviour, ITraps
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bike") || collision.gameObject.CompareTag("Pedestrian"))
-        {
-            FailToPassTrap();
-            audioManager.PlaySFX(audioManager.trapHit);
-        }
-    }
-
-    public void FailToPassTrap()
-    {
-        CountDown.remainingTime -= 5;
+        FailToPassTrap(collision, audioManager, "Bike", "Pedestrian");
     }
 }
