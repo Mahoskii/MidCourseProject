@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public float FollowSpeed = 2f;
+    public float yOffset = 250f;
+    public float xOffset = 250f;
     GameObject target;
     public GameObject[] characterArray;
 
@@ -12,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         FindActivePlayer();
-        Vector3 newPos = new Vector3(target.transform.position.x, target.transform.position.y, -10f);
+        Vector3 newPos = new Vector3(target.transform.position.x + xOffset, target.transform.position.y + yOffset, -10f);
         transform.position = Vector3.Slerp(transform.position,newPos,FollowSpeed*Time.deltaTime);
     }
 

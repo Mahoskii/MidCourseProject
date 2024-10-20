@@ -6,7 +6,7 @@ public class CarControls : ICharacter
 {
     public Animator animator;
     public Rigidbody2D rb;
-    float boopForce = 25f;
+    float boopForce = 2500f;
 
     void Start()
     {
