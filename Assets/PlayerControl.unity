@@ -2307,6 +2307,7 @@ MonoBehaviour:
   menuExit: {fileID: 8300000, guid: c4551d1be6a101b44a7d8e846f6afb93, type: 3}
   menuStart: {fileID: 8300000, guid: bbf10e767c2507f4e84ba5fe41377a14, type: 3}
   pickUp: {fileID: 8300000, guid: 44d79b0890abbd048aeba37518a129f7, type: 3}
+  characterSwap: {fileID: 8300000, guid: 3b2028173b8eeb34baf8ce99b072eb6b, type: 3}
 --- !u!4 &2124614524
 Transform:
   m_ObjectHideFlags: 0
