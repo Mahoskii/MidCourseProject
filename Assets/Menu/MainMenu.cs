@@ -7,14 +7,16 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-
+ 
     [SerializeField] Slider volumeSlider;
+
 
     public void ExitGame()
     {
         UnityEngine.Application.Quit();
         Debug.Log("Game Closed");
-        
+      
+
     }
 
     public void StartGame()
@@ -25,7 +27,9 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
-       if (PlayerPrefs.HasKey("Volume"))
+       
+        
+        if (PlayerPrefs.HasKey("Volume"))
         {
             SetVolume(PlayerPrefs.GetFloat("Volume"));
             volumeSlider.value = PlayerPrefs.GetFloat("Volume");
