@@ -15,7 +15,7 @@ public class CarControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(3000, rb, animator, "carSpeed");
+        MovementAtUniqueSpeed(450000, rb, animator, "carSpeed");
 
     }
 

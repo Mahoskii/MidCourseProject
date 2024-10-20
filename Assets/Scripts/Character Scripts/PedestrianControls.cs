@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class PedestrianControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(1500, rb, animator, "pedestrianSpeed");
+        MovementAtUniqueSpeed(150000, rb, animator, "pedestrianSpeed");
         
     }
 
