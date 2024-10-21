@@ -7,7 +7,7 @@ public class PedestrianControls : ICharacter
 {
     public Animator animator;
     public Rigidbody2D rb;
-    float boopForce = 1500f;
+    float boopForce = 15f;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class PedestrianControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(225000, rb, animator, "pedestrianSpeed");
+        MovementAtUniqueSpeed(1500, rb, animator, "pedestrianSpeed");
         
     }
 
