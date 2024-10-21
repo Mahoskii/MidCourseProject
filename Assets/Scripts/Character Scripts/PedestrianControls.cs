@@ -7,7 +7,7 @@ public class PedestrianControls : ICharacter
 {
     public Animator animator;
     public Rigidbody2D rb;
-    float boopForce = 15f;
+    float boopForce = 1500f;
 
     void Start()
     {
