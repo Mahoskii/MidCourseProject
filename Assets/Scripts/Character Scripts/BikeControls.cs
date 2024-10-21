@@ -15,7 +15,7 @@ public class BikeControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(1500, rb, animator, "bikeSpeed");
+        MovementAtUniqueSpeed(300000, rb, animator, "bikeSpeed");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

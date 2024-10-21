@@ -16,7 +16,7 @@ public class PedestrianControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(1500, rb, animator, "pedestrianSpeed");
+        MovementAtUniqueSpeed(225000, rb, animator, "pedestrianSpeed");
         
     }
 
