@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu]
-public class FloatVariable : ScriptableObject
+public class IntVariable : ScriptableObject
 {
-    public float value;
+    public int value;
 }
