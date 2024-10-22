@@ -9,9 +9,15 @@ public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
+    public string[] characterNames;
     public float textSpeed;
 
     private int index;
+
+    public GameObject playerAvatar;
+    public GameObject bossAvatar;
+
+    AudioManager audioManager;
 
 
     void Start()
@@ -36,10 +42,16 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void StartDialogue()
     {
         index = 0;
+        ShowAvatar();
+        audioManager.PlaySFX(audioManager.typing);
         StartCoroutine(TypeLine());
     }
 
@@ -58,11 +70,29 @@ public class Dialogue : MonoBehaviour
         {
             index++;
             textComponent.text = string.Empty;
+            ShowAvatar();
+            audioManager.PlaySFX(audioManager.typing);
             StartCoroutine(TypeLine());
         }
         else
         {
             SceneManager.LoadScene("01102024");
+        }
+    }
+    void ShowAvatar()
+    {
+       
+        playerAvatar.SetActive(false);
+        bossAvatar.SetActive(false);
+
+        
+        if (characterNames[index] == "Player")
+        {
+            playerAvatar.SetActive(true);
+        }
+        else if (characterNames[index] == "Boss")
+        {
+            bossAvatar.SetActive(true);
         }
     }
 }
