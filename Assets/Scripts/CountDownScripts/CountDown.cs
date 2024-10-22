@@ -6,20 +6,26 @@ using UnityEngine;
 public class CountDown : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    public static float remainingTime = 90;
+    public Floatvariable remainingTime;
+    [Header("Events")]
+    public GameEvent onTimeOver;
 
     void Update()
     {
-        if (remainingTime > 0)
+        if (remainingTime.value > 0)
         {
-            remainingTime -= Time.deltaTime;
-            TimeDisplay(remainingTime);
+            remainingTime.value -= Time.deltaTime;
+            TimeDisplay(remainingTime.value);
+            if (remainingTime.value <= 0.01)
+            {
+                onTimeOver.Raise();
+            }
 
         }
-        else if (remainingTime <= 0)
+        else if (remainingTime.value <= 0)
         {
-            remainingTime = 0;
-            TimeDisplay(remainingTime);
+            remainingTime.value = 0;
+            TimeDisplay(remainingTime.value);
         }
     }
 

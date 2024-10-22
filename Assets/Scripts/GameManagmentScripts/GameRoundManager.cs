@@ -14,7 +14,7 @@ public class GameRoundManager : MonoBehaviour
     public StringVariables gameOutcome;
 
     private List<float> RoundTimesList = new List<float> { 90,90, 75, 60, 45, 30};
-    private List<Vector2> DeliveryPointsLocationList = new List<Vector2> {new Vector2(0,3), new Vector2(-5, 3), new Vector2(-2, 3), new Vector2(1, 3) , new Vector2(3, 3), new Vector2(6, 3)};
+    private List<Vector2> DeliveryPointsLocationList = new List<Vector2> {new Vector2(1430,-116), new Vector2(1430, -116), new Vector2(1450, -116), new Vector2(1, 3) , new Vector2(3, 3), new Vector2(6, 3)};
 
     [Header("Events")]
     public GameEvent onPopUPCall;

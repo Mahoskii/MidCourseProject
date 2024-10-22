@@ -184,3 +184,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 3244250937318500525}
+  remainingTime: {fileID: 11400000, guid: 19c5243af51b5534dac711dd6327c693, type: 2}
+  onTimeOver: {fileID: 11400000, guid: 56928db4adc86ee4b8772dbf2df8dbc2, type: 2}
