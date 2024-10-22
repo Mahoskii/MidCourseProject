@@ -9,13 +9,37 @@ public class CameraFollow : MonoBehaviour
     public float xOffset = 250f;
     GameObject target;
     public GameObject[] characterArray;
+    public Vector3 minValue, maxValue;
+    public Vector3 targetPosition;
 
-    // Update is called once per frame
+    void Start()
+    {
+        
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, minValue.x, maxValue.x),
+            Mathf.Clamp(transform.position.y, minValue.y, maxValue.y),
+            -10f);
+    }
     void Update()
     {
         FindActivePlayer();
-        Vector3 newPos = new Vector3(target.transform.position.x + xOffset, target.transform.position.y + yOffset, -10f);
-        transform.position = Vector3.Slerp(transform.position,newPos,FollowSpeed*Time.deltaTime);
+        if (target != null)
+        {
+           
+            Vector3 targetPosition = new Vector3( 
+                target.transform.position.x + xOffset,
+                target.transform.position.y + yOffset,
+                -10f);
+
+
+            Vector3 clampedPosition = new Vector3(
+               Mathf.Clamp(targetPosition.x, minValue.x, maxValue.x),
+               Mathf.Clamp(targetPosition.y, minValue.y, maxValue.y),
+               -10f);
+
+
+            transform.position = Vector3.Slerp(transform.position, clampedPosition, FollowSpeed * Time.deltaTime);
+        }
     }
 
     public void FindActivePlayer()
