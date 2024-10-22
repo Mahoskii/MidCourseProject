@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("01102024");
+        SceneManager.LoadScene("CutScene");
        
     }
 
