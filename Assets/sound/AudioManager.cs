@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip menuStart;
     public AudioClip pickUp;
     public AudioClip characterSwap;
+    public AudioClip typing;
 
 
     private void Start()
