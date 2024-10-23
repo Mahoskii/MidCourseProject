@@ -22,7 +22,7 @@ public class ButtonScript : MonoBehaviour
             case "gameEnd":
                 popUPWindow.SetActive(false);
                 SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-                SceneManager.LoadSceneAsync("TestScene");
+                SceneManager.LoadSceneAsync("MainMenu");
                 break;
 
         }
