@@ -11,10 +11,11 @@ public class CameraFollow : MonoBehaviour
     public GameObject[] characterArray;
     public Vector3 minValue, maxValue;
     public Vector3 targetPosition;
+    public VectorVariable deliveryPointLocation;
+
 
     void Start()
-    {
-        
+    {  
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, minValue.x, maxValue.x),
             Mathf.Clamp(transform.position.y, minValue.y, maxValue.y),
@@ -39,6 +40,7 @@ public class CameraFollow : MonoBehaviour
 
 
             transform.position = Vector3.Slerp(transform.position, clampedPosition, FollowSpeed * Time.deltaTime);
+
         }
     }
 
@@ -52,4 +54,5 @@ public class CameraFollow : MonoBehaviour
             }
         }
     }
+
 }
