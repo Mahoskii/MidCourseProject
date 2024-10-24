@@ -8,6 +8,8 @@ public class ButtonScript : MonoBehaviour
 
     public StringVariables outcome;
     public GameObject popUPWindow;
+    [Header("Events")]
+    public GameEvent onGameStart;
     public void RoundOutcome()
     {
         switch (outcome.value)
@@ -20,11 +22,12 @@ public class ButtonScript : MonoBehaviour
 
             case "roundStart":
                 popUPWindow.SetActive(false);
+                onGameStart.Raise();
                 break;
 
             case "gameEnd":
                 popUPWindow.SetActive(false);
-                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
                 SceneManager.LoadSceneAsync("MainMenu");
                 break;
 
