@@ -18,7 +18,18 @@ public class GameRoundManager : MonoBehaviour
 
     [Header("Events")]
     public GameEvent onPopUPCall;
-
+    
+    public void OnGameStart()
+    {
+        Time.timeScale = 0f;
+        attemptsLeft.value = 3;
+        deliveriesDone.value = 0;
+        deliveryPointLocation.value = DeliveryPointsLocationList[deliveriesDone.value];
+        remainingTime.value = RoundTimesList[deliveriesDone.value];
+        CallPopUp("Your night shift is about to begin!", "can you make it through to the end?", "roundStart");
+        CameraPan();
+        CallPopUp("Ready?", "Start!", "onGoing");
+    }
     public void RoundFail()
     {
         Time.timeScale = 0f;
@@ -58,5 +69,12 @@ public class GameRoundManager : MonoBehaviour
         popUpContent.value = contentMessage;
         gameOutcome.value = gameoutCome;
         onPopUPCall.Raise();
+    }
+
+    public void CameraPan()
+    {
+        Vector2 startPlayerPosition = new(-956f, -240f);
+        Vector2 deliveryPointPosition = deliveryPointLocation.value;
+        transform.position = Vector2.MoveTowards(startPlayerPosition, Vector2.Lerp(startPlayerPosition, deliveryPointPosition, 0.1f), 0.1f);
     }
 }
