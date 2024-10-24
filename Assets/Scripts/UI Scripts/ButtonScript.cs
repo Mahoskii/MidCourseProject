@@ -16,7 +16,10 @@ public class ButtonScript : MonoBehaviour
 
                 popUPWindow.SetActive(false);
                 Time.timeScale = 1f;
+                break;
 
+            case "roundStart":
+                popUPWindow.SetActive(false);
                 break;
 
             case "gameEnd":
