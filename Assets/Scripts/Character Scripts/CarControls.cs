@@ -6,7 +6,7 @@ public class CarControls : ICharacter
 {
     public Animator animator;
     public Rigidbody2D rb;
-    float boopForce = 25f;
+    float boopForce = 2500f;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class CarControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(3000, rb, animator, "carSpeed");
+        MovementAtUniqueSpeed(450000, rb, animator, "carSpeed");
 
     }
 

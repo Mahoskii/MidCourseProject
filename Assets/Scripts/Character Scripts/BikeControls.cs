@@ -6,7 +6,7 @@ public class BikeControls : ICharacter
 {
     public Animator animator;
     public Rigidbody2D rb;
-    float boopForce = 20f;
+    float boopForce = 3000f;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class BikeControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(2000, rb, animator, "bikeSpeed");
+        MovementAtUniqueSpeed(300000, rb, animator, "bikeSpeed");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

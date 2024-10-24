@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &236971691488335708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6942091752995116205}
+  - component: {fileID: 7734692808166464161}
+  - component: {fileID: 2816883513476675794}
+  - component: {fileID: 6402475559972741873}
+  m_Layer: 0
+  m_Name: RoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6942091752995116205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236971691488335708}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5091273, y: -0.01153839, z: -0.062337555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7734692808166464161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236971691488335708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11971a35ecb52e44db3485901b4ee813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remainingTime: {fileID: 11400000, guid: 19c5243af51b5534dac711dd6327c693, type: 2}
+  deliveriesDone: {fileID: 11400000, guid: 328da31449dceb24c9d17213c9e81837, type: 2}
+  attemptsLeft: {fileID: 11400000, guid: 3add6626978a19f419913840490f9866, type: 2}
+  deliveryPointLocation: {fileID: 11400000, guid: 327b530b394dead40ad957f59998ba8a, type: 2}
+  popUpTitle: {fileID: 11400000, guid: d8f97cd61ad8bc84497a23772301c122, type: 2}
+  popUpContent: {fileID: 11400000, guid: 6c6acb4afe201b84c8cf1dbed1af1bcb, type: 2}
+  gameOutcome: {fileID: 11400000, guid: db58d1dfea00e004780a51fd004f13db, type: 2}
+  onPopUPCall: {fileID: 11400000, guid: 12816ba627ef1054a9851a6627e4dda1, type: 2}
+--- !u!114 &2816883513476675794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236971691488335708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5008ce3126010e4091f6507d01873e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0ecfdbbe4a9b6ec49ba6a9a9ffca974e, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7734692808166464161}
+        m_TargetAssemblyTypeName: GameRoundManager, Assembly-CSharp
+        m_MethodName: RoundPass
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6402475559972741873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236971691488335708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5008ce3126010e4091f6507d01873e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 56928db4adc86ee4b8772dbf2df8dbc2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7734692808166464161}
+        m_TargetAssemblyTypeName: GameRoundManager, Assembly-CSharp
+        m_MethodName: RoundFail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

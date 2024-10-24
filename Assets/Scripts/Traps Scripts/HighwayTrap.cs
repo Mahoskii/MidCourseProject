@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class HighwayTrap : ITraps
 {
     AudioManager audioManager;
+    public Floatvariable remainingTime;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -14,6 +15,6 @@ public class HighwayTrap : ITraps
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FailToPassTrap(collision, audioManager, "Bike", "Pedestrian");
+        FailToPassTrap(collision, audioManager, "Bike", "Pedestrian", remainingTime);
     }
 }

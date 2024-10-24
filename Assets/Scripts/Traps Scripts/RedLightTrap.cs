@@ -6,6 +6,7 @@ using UnityEngine;
 public class RedLightTrap : ITraps
 {
     AudioManager audioManager;
+    public Floatvariable remainingTime;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -13,6 +14,6 @@ public class RedLightTrap : ITraps
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FailToPassTrap(collision, audioManager, "Car", "Bike");
+        FailToPassTrap(collision, audioManager, "Car", "Bike", remainingTime);
     }
 }

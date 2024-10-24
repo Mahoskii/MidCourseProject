@@ -5,6 +5,11 @@ using UnityEngine;
 public class DeliveryPoint : MonoBehaviour
 {
     AudioManager audioManager;
+    public GameObject deliveryPoint;
+    public Floatvariable remainingTime;
+    public VectorVariable deliveryPointLocation;
+    [Header("Events")]
+    public GameEvent onDeliveryPointReached;
 
     private void Awake()
     {
@@ -13,10 +18,14 @@ public class DeliveryPoint : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(CountDown.remainingTime > 0)
+        if(remainingTime.value > 0)
         {
-            collision.gameObject.transform.position = new Vector2(0f, 0f);
+            Time.timeScale = 0f;
+            collision.gameObject.transform.position = new Vector2(-956f, -240f);
+            //collision.gameObject.transform.parent.gameObject.SetActive(false);
+            deliveryPoint.transform.position = deliveryPointLocation.value;
             audioManager.PlaySFX(audioManager.levelComplete);
+            onDeliveryPointReached.Raise();
         }
     }
 }

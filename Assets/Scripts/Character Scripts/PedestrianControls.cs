@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class PedestrianControls : ICharacter
 {
     public Animator animator;
     public Rigidbody2D rb;
-    float boopForce = 15f;
+    float boopForce = 1500f;
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class PedestrianControls : ICharacter
 
     void FixedUpdate()
     {
-        MovementAtUniqueSpeed(1500, rb, animator, "pedestrianSpeed");
+        MovementAtUniqueSpeed(225000, rb, animator, "pedestrianSpeed");
         
     }
 
