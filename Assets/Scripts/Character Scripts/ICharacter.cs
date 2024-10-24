@@ -7,10 +7,12 @@ public abstract class ICharacter : MonoBehaviour
     bool facingRight = true;
     public void MovementAtUniqueSpeed(float Speed, Rigidbody2D rb, Animator animator, string animationName)
     {
+        //movement + movement speed
         var dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.drag = 15;
         rb.AddForce(Speed * Time.fixedDeltaTime * dir);
 
+        //what directions the sprite is going to face (left or right)
         if(dir.x > 0 && !facingRight)
         {
             SpriteFlip();
@@ -18,7 +20,16 @@ public abstract class ICharacter : MonoBehaviour
         {
             SpriteFlip();
         }
-        animator.SetFloat(animationName, Mathf.Abs(dir.x));
+
+        //this function will decide if the walking animation should be played based on if the character is moving or not.
+        if(dir == Vector2.zero)
+        {
+            animator.SetFloat(animationName, 0);
+        }
+        else
+        {
+            animator.SetFloat(animationName, 0.1f);
+        }
     }
     public void TrapInteraction(Collision2D collision, Rigidbody2D rb, float boopForce, string TrapFail1, string TrapFail2, string TrapPass)
     {
