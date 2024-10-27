@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSourse: {fileID: 1604369233}
   SfxSourse: {fileID: 44161382}
-  backround: {fileID: 8300000, guid: 16a1f76f20e032e4eaa6269fcbbfa464, type: 3}
+  backround: {fileID: 8300000, guid: 4a6b2fd9c770eb741aef08ff9cd8bfa5, type: 3}
   car: {fileID: 0}
   pageFlip: {fileID: 0}
   trapHit: {fileID: 0}
@@ -1602,6 +1602,7 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   characterSwap: {fileID: 0}
   typing: {fileID: 8300000, guid: 110c503a5cf099f4ba8b3a4711c20dab, type: 3}
+  startRound: {fileID: 0}
 --- !u!4 &1717498911
 Transform:
   m_ObjectHideFlags: 0
