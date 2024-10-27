@@ -21,8 +21,7 @@ public class DeliveryPoint : MonoBehaviour
         if(remainingTime.value > 0)
         {
             Time.timeScale = 0f;
-            collision.gameObject.transform.position = new Vector2(-956f, -240f);
-            //collision.gameObject.transform.parent.gameObject.SetActive(false);
+            //collision.gameObject.transform.position = new Vector2(-956f, -240f);
             deliveryPoint.transform.position = deliveryPointLocation.value;
             audioManager.PlaySFX(audioManager.levelComplete);
             onDeliveryPointReached.Raise();
