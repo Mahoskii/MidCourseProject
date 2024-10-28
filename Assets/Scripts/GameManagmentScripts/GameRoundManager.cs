@@ -79,7 +79,7 @@ public class GameRoundManager : MonoBehaviour
         //if the player managed to do all 5 deliveries, run the game win function that will rest the scene and show the game won message.
         if (deliveriesDone.value == 5 && attemptsLeft.value > 0)
         {
-            CallPopUp("You win!", "Wow, you managed to keep your entry level job another day... Well done?", "Back to main menu");
+            CallPopUp("You win!", "Wow, you managed to keep your entry level job another day... Well done?", "gameEnd");
             audioManager.PlaySFX(audioManager.gameCompleteFast);
         }
     }
