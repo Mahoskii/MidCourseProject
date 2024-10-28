@@ -14,6 +14,9 @@ public class GameRoundManager : MonoBehaviour
     public StringVariables gameOutcome;
     public BoolVariable IsPaused;
 
+    AudioManager audioManager;
+
+
     private List<float> RoundTimesList = new List<float> { 31, 31, 41, 91, 91, 0 };
     //private List<Vector2> DeliveryPointsLocationList = new List<Vector2> { new Vector2(4394, -116), new Vector2(914, 1816), new Vector2(4738, 1135), new Vector2(7288, 4025), new Vector2(-798, 4078), new Vector2(-798, 4078) };
 
@@ -28,7 +31,10 @@ public class GameRoundManager : MonoBehaviour
         deliveriesDone.value = 0;
         //deliveryPointLocation.value = DeliveryPointsLocationList[deliveriesDone.value];
         remainingTime.value = RoundTimesList[deliveriesDone.value];
-        
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+
     }
     private void Start()
     {
@@ -40,6 +46,7 @@ public class GameRoundManager : MonoBehaviour
 
         CallPopUp("Your night shift is about to begin!", "can you make it through to the end?", "roundStart");
     }
+
 
     public void OnRoundStart()
     {
@@ -72,7 +79,8 @@ public class GameRoundManager : MonoBehaviour
         //if the player managed to do all 5 deliveries, run the game win function that will rest the scene and show the game won message.
         if (deliveriesDone.value == 5 && attemptsLeft.value > 0)
         {
-            CallPopUp("Congratulations!", "You completed all your deliveries and got a promotion!", "gameEnd");
+            CallPopUp("You win!", "Wow, you managed to keep your entry level job another day... Well done?", "gameEnd");
+            audioManager.PlaySFX(audioManager.gameCompleteFast);
         }
     }
 

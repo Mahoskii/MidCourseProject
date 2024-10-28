@@ -10,7 +10,7 @@ public class ButtonScript : MonoBehaviour
     public GameObject popUPWindow;
     public BoolVariable IsPaused;
     [Header("Events")]
-    public GameEvent onRoundStart;
+    public GameEvent RaiseInstructions;
 
     public void RoundOutcome()
     {
@@ -25,7 +25,7 @@ public class ButtonScript : MonoBehaviour
             case "roundStart":
                 popUPWindow.SetActive(false);
                 IsPaused.value = false;
-                onRoundStart.Raise();
+                RaiseInstructions.Raise();
 
                 break;
 
