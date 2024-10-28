@@ -342,15 +342,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 544037699}
   lines:
-  - "Boss: That\u2019s it! I've had enough of you! Your delivery time is the slowest
-    of all my delivery drivers, You\u2019re fired! "
-  - 'Player: Please give me one more chance, I promise I can make it. I even got
-    a new bike, and with the delivery car, I know I can do better. '
-  - " Boss: fine! I\u2019ll give you one last chance. If you want to keep working
-    here, you will need to deliver 5 meals in one shift, and I don't want to hear
-    any complaints from the consumers that the food was cold."
-  - 'Boss: Time is money, do you hear me? '
-  - 'Player: Thank you, you will not regret this!  '
+  - "That\u2019s it! I've had enough of you! Your delivery time is the slowest of
+    all my delivery drivers, You\u2019re fired! "
+  - 'Please give me one more chance, I promise I can make it. I even got a new bike,
+    and with the delivery car, I know I can do better. '
+  - "fine! I\u2019ll give you one last chance. If you want to keep working here,
+    you will need to deliver 5 meals in one shift, and I don't want to hear any complaints
+    from the consumers that the food was cold."
+  - 'Time is money, do you hear me? '
+  - 'Thank you, you will not regret this!  '
   characterNames:
   - Boss
   - Player
