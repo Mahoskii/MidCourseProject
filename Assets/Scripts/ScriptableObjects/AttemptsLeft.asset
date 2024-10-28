@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b142309f831204b9fafa857e958deb, type: 3}
   m_Name: AttemptsLeft
   m_EditorClassIdentifier: 
-  value: 10
+  value: 3

@@ -8,6 +8,7 @@ public class CharacterSwap : MonoBehaviour
     AudioManager audioManager;
 
     public GameObject car, bike, pedestrian;
+    public GameObject[] CharacterList = new GameObject[3];
     int whichActive = 1;
 
     private void Awake()
@@ -40,7 +41,8 @@ public class CharacterSwap : MonoBehaviour
                     bike.SetActive(true);
                     pedestrian.SetActive(false);
                     bike.transform.position = car.transform.position;
-                    
+                    bike.transform.localScale = car.transform.localScale;
+
                     break;
 
                 case 2:
@@ -50,7 +52,8 @@ public class CharacterSwap : MonoBehaviour
                     bike.SetActive(false);
                     pedestrian.SetActive(true);
                     pedestrian.transform.position = bike.transform.position;
-                    
+                    pedestrian.transform.localScale = bike.transform.localScale;
+
                     break;
 
                 case 3:
@@ -60,8 +63,30 @@ public class CharacterSwap : MonoBehaviour
                     bike.SetActive(false);
                     pedestrian.SetActive(false);
                     car.transform.position = pedestrian.transform.position;
+                    car.transform.localScale = pedestrian.transform.localScale;
+
                     break;
             }
+    }
 
+    public void ResetSelf()
+    {
+        whichActive = 1;
+        for (int i = 0; i < CharacterList.Length; i++)
+        {
+            Time.timeScale = 1f;
+            CharacterList[i].transform.position = transform.position;
+            CharacterList[i].transform.localScale = new Vector3(250, 250, 250);
+            CharacterList[i].SetActive(false);
+            Time.timeScale = 0f;
+        }
+
+    }
+    public void SetSelfActive()
+    {
+        Time.timeScale = 1f;
+        car.SetActive(true);
+        car.transform.localScale = new Vector3(250, 250, 250);
+        Time.timeScale = 0f;
     }
 }

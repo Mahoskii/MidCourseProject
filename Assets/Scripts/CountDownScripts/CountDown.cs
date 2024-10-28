@@ -9,6 +9,7 @@ public class CountDown : MonoBehaviour
     public Floatvariable remainingTime;
     [Header("Events")]
     public GameEvent onTimeOver;
+    private bool isThereTime = true;
 
     void Update()
     {
@@ -26,6 +27,10 @@ public class CountDown : MonoBehaviour
         {
             remainingTime.value = 0;
             TimeDisplay(remainingTime.value);
+            if (remainingTime.value <= 0 && isThereTime)
+            {
+                remainingTime.value += 0.2f;
+            }
         }
     }
 

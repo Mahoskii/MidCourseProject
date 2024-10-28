@@ -4,22 +4,35 @@ using UnityEngine;
 
 public abstract class ICharacter : MonoBehaviour
 {
-    bool facingRight = true;
+    //bool facingRight = true;
     public void MovementAtUniqueSpeed(float Speed, Rigidbody2D rb, Animator animator, string animationName)
     {
         //movement + movement speed
         var dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.drag = 15;
         rb.AddForce(Speed * Time.fixedDeltaTime * dir);
+        if(Time.timeScale == 0f)
+        {
+            rb.velocity = Vector2.zero;
+        }
 
         //what directions the sprite is going to face (left or right)
-        if(dir.x > 0 && !facingRight)
+        if(dir.x > 0 && transform.localScale.x < 0)
         {
-            SpriteFlip();
-        } else if(dir.x < 0 && facingRight)
+            transform.localScale = new Vector3(250, 250, 250);
+        } else if (dir.x < 0 && transform.localScale.x > 0)
         {
-            SpriteFlip();
+            transform.localScale = new Vector3(-250, 250, 250);
         }
+
+
+        //if(dir.x > 0 && !facingRight)
+        //{
+        //    SpriteFlip();
+        //} else if(dir.x < 0 && facingRight)
+        //{
+        //    SpriteFlip();
+        //}
 
         //this function will decide if the walking animation should be played based on if the character is moving or not.
         if(dir == Vector2.zero)
@@ -48,13 +61,13 @@ public abstract class ICharacter : MonoBehaviour
         
     }
 
-    private void SpriteFlip()
-    {
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
-        facingRight = !facingRight;
-    }
+    //private void SpriteFlip()
+    //{
+    //    Vector3 currentScale = gameObject.transform.localScale;
+    //    currentScale.x *= -1;
+    //    gameObject.transform.localScale = currentScale;
+    //    facingRight = !facingRight;
+    //}
 
 
 }

@@ -8,27 +8,43 @@ public class GameRoundManager : MonoBehaviour
     public Floatvariable remainingTime;
     public IntVariable deliveriesDone;
     public IntVariable attemptsLeft;
-    public VectorVariable deliveryPointLocation;
+    //public VectorVariable deliveryPointLocation;
     public StringVariables popUpTitle;
     public StringVariables popUpContent;
     public StringVariables gameOutcome;
+    public BoolVariable IsPaused;
 
-    private List<float> RoundTimesList = new List<float> { 90,90, 75, 60, 45, 30};
-    private List<Vector2> DeliveryPointsLocationList = new List<Vector2> {new Vector2(1430,-116), new Vector2(1430, -116), new Vector2(1450, -116), new Vector2(1, 3) , new Vector2(3, 3), new Vector2(6, 3)};
+    private List<float> RoundTimesList = new List<float> { 31, 31, 41, 91, 91, 0 };
+    //private List<Vector2> DeliveryPointsLocationList = new List<Vector2> { new Vector2(4394, -116), new Vector2(914, 1816), new Vector2(4738, 1135), new Vector2(7288, 4025), new Vector2(-798, 4078), new Vector2(-798, 4078) };
 
     [Header("Events")]
     public GameEvent onPopUPCall;
-    
-    public void OnGameStart()
+
+
+    private void Awake()
     {
         Time.timeScale = 0f;
         attemptsLeft.value = 3;
         deliveriesDone.value = 0;
-        deliveryPointLocation.value = DeliveryPointsLocationList[deliveriesDone.value];
+        //deliveryPointLocation.value = DeliveryPointsLocationList[deliveriesDone.value];
         remainingTime.value = RoundTimesList[deliveriesDone.value];
+        
+    }
+    private void Start()
+    {
+        OnGameStart();
+    }
+
+    public void OnGameStart()
+    {
+
         CallPopUp("Your night shift is about to begin!", "can you make it through to the end?", "roundStart");
-        CameraPan();
-        CallPopUp("Ready?", "Start!", "onGoing");
+    }
+
+    public void OnRoundStart()
+    {
+        CallPopUp($"Delivery Numer: {deliveriesDone.value + 1}", "Ready? Start!", "onGoing");
+        Debug.Log(deliveriesDone.value);
     }
     public void RoundFail()
     {
@@ -37,8 +53,7 @@ public class GameRoundManager : MonoBehaviour
         attemptsLeft.value -= 1;
         //reset the timer to the correct time for this round.
         remainingTime.value = RoundTimesList[deliveriesDone.value];
-        
-        CallPopUp("Delivery Failed!", "You have failed to complete this delivery", "onGoing");
+        CallPopUp("Delivery Failed!", "You have failed to complete this delivery", "roundStart");
         //if the player ran out of attempts, run the game over function that will reset the secne and show the lose message.
         if (attemptsLeft.value == 0 && deliveriesDone.value < 5)
         {
@@ -52,14 +67,12 @@ public class GameRoundManager : MonoBehaviour
         deliveriesDone.value += 1;
         //change the timer to the new timer for the new round.
         remainingTime.value = RoundTimesList[deliveriesDone.value];
-        //change the location of the spawn point to the next location.
-        deliveryPointLocation.value = DeliveryPointsLocationList[deliveriesDone.value];
 
-        CallPopUp("Delivery Complete!", "You have completed your delivery successfully!", "onGoing");
+        CallPopUp("Delivery Complete!", "You have completed your delivery successfully!", "roundStart");
         //if the player managed to do all 5 deliveries, run the game win function that will rest the scene and show the game won message.
         if (deliveriesDone.value == 5 && attemptsLeft.value > 0)
         {
-            CallPopUp("Congratulations!", "You completed all your deliveries and got a promotion!","gameEnd");
+            CallPopUp("Congratulations!", "You completed all your deliveries and got a promotion!", "gameEnd");
         }
     }
 
@@ -68,13 +81,7 @@ public class GameRoundManager : MonoBehaviour
         popUpTitle.value = titleMessage;
         popUpContent.value = contentMessage;
         gameOutcome.value = gameoutCome;
+        IsPaused.value = true;
         onPopUPCall.Raise();
-    }
-
-    public void CameraPan()
-    {
-        Vector2 startPlayerPosition = new(-956f, -240f);
-        Vector2 deliveryPointPosition = deliveryPointLocation.value;
-        transform.position = Vector2.MoveTowards(startPlayerPosition, Vector2.Lerp(startPlayerPosition, deliveryPointPosition, 0.1f), 0.1f);
     }
 }

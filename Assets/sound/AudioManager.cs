@@ -22,8 +22,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip pickUp;
     public AudioClip characterSwap;
     public AudioClip typing;
+    public AudioClip startRound;
 
-
+    private AudioClip currentSfxClip;
     private void Start()
     {
         musicSourse.clip = backround;
@@ -32,6 +33,25 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX (AudioClip clip)
     {
-        SfxSourse.PlayOneShot (clip);
+        if (clip != null)
+        {
+            SfxSourse.PlayOneShot(clip);
+            currentSfxClip = clip; 
+        }
+    }
+
+    public void StopSFX(AudioClip clip)
+    {
+        if (currentSfxClip == clip) 
+        {
+            SfxSourse.Stop();
+            currentSfxClip = null;
+        }
+    }
+
+    public void StopAllSFX()
+    {
+        SfxSourse.Stop();
+        currentSfxClip = null; 
     }
 }

@@ -52,4 +52,9 @@ public class CameraFollow : MonoBehaviour
             }
         }
     }
+
+    public void ChangePosition()
+    {
+        gameObject.transform.position = new Vector3(0, 0, -50);
+    }
 }
