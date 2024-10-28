@@ -8,14 +8,14 @@ public class GameRoundManager : MonoBehaviour
     public Floatvariable remainingTime;
     public IntVariable deliveriesDone;
     public IntVariable attemptsLeft;
-    public VectorVariable deliveryPointLocation;
+    //public VectorVariable deliveryPointLocation;
     public StringVariables popUpTitle;
     public StringVariables popUpContent;
     public StringVariables gameOutcome;
     public BoolVariable IsPaused;
 
     private List<float> RoundTimesList = new List<float> { 31, 31, 41, 91, 91, 0 };
-    private List<Vector2> DeliveryPointsLocationList = new List<Vector2> { new Vector2(4394, -116), new Vector2(914, 1816), new Vector2(4738, 1135), new Vector2(7288, 4025), new Vector2(-798, 4078), new Vector2(-798, 4078) };
+    //private List<Vector2> DeliveryPointsLocationList = new List<Vector2> { new Vector2(4394, -116), new Vector2(914, 1816), new Vector2(4738, 1135), new Vector2(7288, 4025), new Vector2(-798, 4078), new Vector2(-798, 4078) };
 
     [Header("Events")]
     public GameEvent onPopUPCall;
@@ -67,8 +67,6 @@ public class GameRoundManager : MonoBehaviour
         deliveriesDone.value += 1;
         //change the timer to the new timer for the new round.
         remainingTime.value = RoundTimesList[deliveriesDone.value];
-        //change the location of the spawn point to the next location.
-        deliveryPointLocation.value = DeliveryPointsLocationList[deliveriesDone.value];
 
         CallPopUp("Delivery Complete!", "You have completed your delivery successfully!", "roundStart");
         //if the player managed to do all 5 deliveries, run the game win function that will rest the scene and show the game won message.
