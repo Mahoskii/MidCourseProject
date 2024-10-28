@@ -8,6 +8,8 @@ public class DeliveryPoint : MonoBehaviour
     public GameObject deliveryPoint;
     public Floatvariable remainingTime;
     public VectorVariable deliveryPointLocation;
+    public DeliveryPointScriptable DeliveryPointLocations;
+    public int deliveryIndex = 0;
     [Header("Events")]
     public GameEvent onDeliveryPointReached;
 
@@ -20,12 +22,20 @@ public class DeliveryPoint : MonoBehaviour
     {
         if(remainingTime.value > 0)
         {
-            collision.gameObject.transform.localScale = new Vector3(-250, 250, 250);
+            if(deliveryIndex < 5)
+            {
+                deliveryIndex++;
+            } else if( deliveryIndex == 5)
+            {
+                deliveryIndex = 0;
+            }
+            //collision.gameObject.transform.localScale = new Vector3(-250, 250, 250);
             Time.timeScale = 0f;
             //collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-            deliveryPoint.transform.position = deliveryPointLocation.value;
+            deliveryPoint.transform.position = DeliveryPointLocations.DeliveryPointsLocationList[deliveryIndex];
             audioManager.PlaySFX(audioManager.levelComplete);
             onDeliveryPointReached.Raise();
+            Debug.Log(deliveryIndex);
         }
     }
 }
