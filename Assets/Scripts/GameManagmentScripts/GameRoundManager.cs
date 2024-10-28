@@ -26,7 +26,7 @@ public class GameRoundManager : MonoBehaviour
         Time.timeScale = 0f;
         attemptsLeft.value = 3;
         deliveriesDone.value = 0;
-        deliveryPointLocation.value = DeliveryPointsLocationList[deliveriesDone.value];
+        //deliveryPointLocation.value = DeliveryPointsLocationList[deliveriesDone.value];
         remainingTime.value = RoundTimesList[deliveriesDone.value];
         
     }
@@ -44,6 +44,7 @@ public class GameRoundManager : MonoBehaviour
     public void OnRoundStart()
     {
         CallPopUp($"Delivery Numer: {deliveriesDone.value + 1}", "Ready? Start!", "onGoing");
+        Debug.Log(deliveriesDone.value);
     }
     public void RoundFail()
     {
@@ -62,7 +63,6 @@ public class GameRoundManager : MonoBehaviour
 
     public void RoundPass()
     {
-        //ChangeVelocity();
         //if the player passes the round, add one to deliveries done.
         deliveriesDone.value += 1;
         //change the timer to the new timer for the new round.
