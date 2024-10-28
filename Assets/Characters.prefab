@@ -595,7 +595,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2626979618395473124}
   - component: {fileID: 7534013019626879178}
-  - component: {fileID: 2760452499715267650}
   - component: {fileID: 5853409813832747335}
   - component: {fileID: 2277380896611511719}
   - component: {fileID: 4508897665376306720}
@@ -639,21 +638,10 @@ MonoBehaviour:
   car: {fileID: 3112173649535195287}
   bike: {fileID: 6040554487786304238}
   pedestrian: {fileID: 533046346700539873}
---- !u!114 &2760452499715267650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6573885527100658811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2afcb660359b74eb3f450ed0cd05f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  car: {fileID: 3112173649535195287}
-  bike: {fileID: 6040554487786304238}
-  pedestrian: {fileID: 533046346700539873}
+  CharacterList:
+  - {fileID: 3112173649535195287}
+  - {fileID: 6040554487786304238}
+  - {fileID: 533046346700539873}
 --- !u!114 &5853409813832747335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,8 +658,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2760452499715267650}
-        m_TargetAssemblyTypeName: ResetAtRoundStart, Assembly-CSharp
+      - m_Target: {fileID: 7534013019626879178}
+        m_TargetAssemblyTypeName: CharacterSwap, Assembly-CSharp
         m_MethodName: ResetSelf
         m_Mode: 1
         m_Arguments:
@@ -698,8 +686,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2760452499715267650}
-        m_TargetAssemblyTypeName: ResetAtRoundStart, Assembly-CSharp
+      - m_Target: {fileID: 7534013019626879178}
+        m_TargetAssemblyTypeName: CharacterSwap, Assembly-CSharp
         m_MethodName: ResetSelf
         m_Mode: 1
         m_Arguments:
@@ -726,8 +714,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2760452499715267650}
-        m_TargetAssemblyTypeName: ResetAtRoundStart, Assembly-CSharp
+      - m_Target: {fileID: 7534013019626879178}
+        m_TargetAssemblyTypeName: CharacterSwap, Assembly-CSharp
         m_MethodName: SetSelfActive
         m_Mode: 1
         m_Arguments:

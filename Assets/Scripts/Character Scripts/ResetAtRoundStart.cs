@@ -5,25 +5,19 @@ using UnityEngine;
 public class ResetAtRoundStart : MonoBehaviour
 {
     public GameObject car, bike, pedestrian;
+    public GameObject[] CharacterList = new GameObject[3];
 
     public void ResetSelf()
     {
-        car.transform.position = transform.position;
-        bike.transform.position = transform.position;
-        pedestrian.transform.position = transform.position;
+        for(int i = 0; i < CharacterList.Length; i++)
+        {
+            Time.timeScale = 1f;
+            CharacterList[i].transform.position = transform.position;
+            CharacterList[i].transform.localScale = new Vector3(250, 250, 250);
+            CharacterList[i].SetActive(false);
+            Time.timeScale = 0f;
+        }
 
-        if (car.activeSelf)
-        {
-            car.SetActive(false);
-        }
-        else if (bike.activeSelf)
-        {
-            bike.SetActive(false);
-        }
-        else if (pedestrian.activeSelf)
-        {
-            pedestrian.SetActive(false);
-        }
     }
 
     public void SetSelfActive()

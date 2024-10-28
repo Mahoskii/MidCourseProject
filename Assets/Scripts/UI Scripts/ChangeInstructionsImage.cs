@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeInstructionsImage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public IntVariable deliveriesDone;
+    public Image instructions;
+    public List<Image> InstructionsList = new List<Image>();
 
-    // Update is called once per frame
-    void Update()
+    public void DisplayInstructions()
     {
-        
+        instructions = InstructionsList[deliveriesDone.value];
     }
 }
