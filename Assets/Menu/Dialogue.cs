@@ -39,6 +39,7 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+                audioManager.StopSFX(audioManager.typing);
             }
         }
     }
