@@ -7,15 +7,20 @@ using UnityEngine.UI;
 
 public class ChangeInstructionsImage : MonoBehaviour
 {
-    public IntVariable deliveriesDone;
+    public int roundNumber = 0;
     public Image instructions;
-    public List<Image> InstructionsList = new List<Image>();
+    public GameObject confirmButton;
+    public GameObject instructionsImage;
+    public List<Sprite> InstructionsList = new List<Sprite>();
 
     AudioManager audioManager;
 
     public void DisplayInstructions()
     {
-        instructions = InstructionsList[deliveriesDone.value];
+        instructionsImage.SetActive(true);
+        confirmButton.SetActive(true);
+        instructions.sprite = InstructionsList[roundNumber];
+        roundNumber++;
         audioManager.PlaySFX(audioManager.startRound);
     }
 
