@@ -35,7 +35,7 @@ MonoBehaviour:
   currentRoundNumber: 0
   roundNumberIndex: 0
   RoundNumber: 0100000002000000030000000400000005000000
-  attemptsCurrentlyLeft: 0
+  attemptsCurrentlyLeft: 3
   attemptsLeftIndex: 0
   AttemptsNumber: 03000000020000000100000000000000
   popUpTitleForThisCase: 'Delivery Numer: 1'
