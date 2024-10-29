@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class OneScriptToRuleThemAll : ScriptableObject
 {
+    public int mainIndex;
+    
     //Time control variables
     public float timeForThisRound;
     public int timeIndex = 0;
@@ -32,12 +34,12 @@ public class OneScriptToRuleThemAll : ScriptableObject
     public List<Vector2> TrapSpawnPoints = new List<Vector2>();
 
     //Deliveries done controls
-    public int currentRoundNumber;
+    public int currentRoundNumber = 0;
     public int roundNumberIndex = 0;
     public List<int> RoundNumber = new List<int>() { 1, 2, 3, 4, 5 };
 
     //Attempts left controls
-    public int attemptsCurrentlyLeft;
+    public int attemptsCurrentlyLeft = 3;
     public int attemptsLeftIndex = 0;
     public List<int> AttemptsNumber = new List<int>() { 3, 2, 1, 0 };
 

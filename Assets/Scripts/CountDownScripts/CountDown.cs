@@ -6,16 +6,16 @@ using UnityEngine;
 public class CountDown : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    public OneScriptToRuleThemAll roundTimeSupplier;
+    public OneScriptToRuleThemAll gameData;
     public float remainingTime = 0;
+    private bool isThereTime = true;
     [Header("Events")]
     public GameEvent onTimeOver;
-    private bool isThereTime = true;
+    
 
     private void Start()
     {
         UpdateTimer();
-        roundTimeSupplier.timeIndex++;
     }
 
     void Update()
@@ -50,21 +50,11 @@ public class CountDown : MonoBehaviour
 
     public void UpdateTimer()
     {
-        remainingTime = roundTimeSupplier.RoundTimes[roundTimeSupplier.timeIndex];
+        remainingTime = gameData.RoundTimes[gameData.mainIndex];
     }
-    public void UpdateCounter()
-    {
-        if (roundTimeSupplier.timeIndex < 4)
-        {
-            roundTimeSupplier.timeIndex++;
-        }
-    }
+
     public void TurnSelfOff()
     {
         gameObject.SetActive(false);
-    }
-    public void ResetCounter()
-    {
-        roundTimeSupplier.timeIndex = 0;
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089d7a9da0d37ab4a9b5fbd5543044b4, type: 3}
   m_Name: TheScriptOfPower
   m_EditorClassIdentifier: 
+  mainIndex: 0
   timeForThisRound: 0
   timeIndex: 0
   RoundTimes:
@@ -37,7 +38,7 @@ MonoBehaviour:
   attemptsCurrentlyLeft: 0
   attemptsLeftIndex: 0
   AttemptsNumber: 03000000020000000100000000000000
-  popUpTitleForThisCase: 
+  popUpTitleForThisCase: 'Delivery Numer: 1'
   popUpTitleIndex: 0
   PopUpTitleList:
   - Your night shift is about to begin!
@@ -46,7 +47,7 @@ MonoBehaviour:
   - Oh no! :(
   - Delivery Complete!
   - You win!
-  popUpContentForThisCase: 
+  popUpContentForThisCase: Ready? Start!
   popUpContentIndex: 0
   PopUpContentList:
   - can you make it through to the end?
@@ -55,7 +56,7 @@ MonoBehaviour:
   - You have been fired
   - You have completed your delivery successfully!
   - Wow, you managed to keep your entry level job another day... Well done?
-  popUpConditionForThisCase: 
+  popUpConditionForThisCase: onGoing
   popUpConditionIndex: 0
   PopUpCondition:
   - roundStart

@@ -6,18 +6,26 @@ using TMPro;
 public class DisplayAttemptsLeft : UpdatePlayerScore
 {
     public TextMeshProUGUI attemptsLeftText;
-    public IntVariable attemptsLeft;
-    private int currentScore = 3;
+    public OneScriptToRuleThemAll gameData;
+
+    [Header("Events")]
+    public GameEvent onGameLost;
 
     private void Awake()
     {
-        PlayerScoreUpdate(attemptsLeftText, attemptsLeft, "Attempts Left: ", currentScore);
+        PlayerScoreUpdate(attemptsLeftText, gameData.attemptsCurrentlyLeft, "Attempts Left: ");
     }
-    private void Update()
+
+    public void UpdateAttempts()
     {
-        if (currentScore != attemptsLeft.value)
+        if(gameData.attemptsCurrentlyLeft > 0)
         {
-            PlayerScoreUpdate(attemptsLeftText, attemptsLeft, "Attempts Left: ", currentScore);
+            gameData.attemptsCurrentlyLeft--;
+        } else if(gameData.attemptsCurrentlyLeft == 0)
+        {
+            onGameLost.Raise();
         }
+        PlayerScoreUpdate(attemptsLeftText, gameData.attemptsCurrentlyLeft, "Attempts Left: ");
     }
+
 }
