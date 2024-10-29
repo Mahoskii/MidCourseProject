@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour
             Mathf.Clamp(transform.position.y, minValue.y, maxValue.y),
             -10f);
     }
-    void Update()
+    void FixedUpdate()
     {
         FindActivePlayer();
         if (target != null)
