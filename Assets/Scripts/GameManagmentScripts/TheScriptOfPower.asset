@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089d7a9da0d37ab4a9b5fbd5543044b4, type: 3}
+  m_Name: TheScriptOfPower
+  m_EditorClassIdentifier: 
+  timeForThisRound: 0
+  timeIndex: 0
+  RoundTimes:
+  - 31
+  - 36
+  - 41
+  - 76
+  - 91
+  deliveryPointForThisRound: {x: 0, y: 0}
+  deliveryPointIndex: 0
+  DeliveryHousePoints:
+  - {x: 4394, y: -116}
+  - {x: 914, y: 1816}
+  - {x: 4738, y: 1135}
+  - {x: 7288, y: 4025}
+  - {x: -798, y: 4078}
+  trapSpawnPointsForThisRound: {x: 0, y: 0}
+  trapPointsIndex: 0
+  TrapSpawnPoints: []
+  currentRoundNumber: 0
+  roundNumberIndex: 0
+  RoundNumber: 0100000002000000030000000400000005000000
+  attemptsCurrentlyLeft: 0
+  attemptsLeftIndex: 0
+  AttemptsNumber: 03000000020000000100000000000000
+  popUpTitleForThisCase: 
+  popUpTitleIndex: 0
+  PopUpTitleList:
+  - Your night shift is about to begin!
+  - 'Delivery Numer: '
+  - Delivery Failed!
+  - Oh no! :(
+  - Delivery Complete!
+  - You win!
+  popUpContentForThisCase: 
+  popUpContentIndex: 0
+  PopUpContentList:
+  - can you make it through to the end?
+  - Ready? Start!
+  - You have failed to complete this delivery
+  - You have been fired
+  - You have completed your delivery successfully!
+  - Wow, you managed to keep your entry level job another day... Well done?
+  popUpConditionForThisCase: 
+  popUpConditionIndex: 0
+  PopUpCondition:
+  - roundStart
+  - onGoing
+  - gameEnd
