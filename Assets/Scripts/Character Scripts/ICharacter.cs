@@ -11,10 +11,7 @@ public abstract class ICharacter : MonoBehaviour
         var dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.drag = 15;
         rb.AddForce(Speed * Time.fixedDeltaTime * dir);
-        if(Time.timeScale == 0f)
-        {
-            rb.velocity = Vector2.zero;
-        }
+    
 
         //what directions the sprite is going to face (left or right)
         if(dir.x > 0 && transform.localScale.x < 0)

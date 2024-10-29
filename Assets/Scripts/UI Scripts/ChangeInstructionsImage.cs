@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ChangeInstructionsImage : MonoBehaviour
 {
-    public int roundNumber = 0;
+    public OneScriptToRuleThemAll gameData;
     public Image instructions;
     public GameObject confirmButton;
     public GameObject instructionsImage;
@@ -19,8 +19,7 @@ public class ChangeInstructionsImage : MonoBehaviour
     {
         instructionsImage.SetActive(true);
         confirmButton.SetActive(true);
-        instructions.sprite = InstructionsList[roundNumber];
-        roundNumber++;
+        instructions.sprite = InstructionsList[gameData.mainIndex];
         audioManager.PlaySFX(audioManager.startRound);
     }
 
