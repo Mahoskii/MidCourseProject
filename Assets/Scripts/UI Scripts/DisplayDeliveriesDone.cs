@@ -6,19 +6,27 @@ using TMPro;
 public class DisplayDeliveriesDone : UpdatePlayerScore
 {
     public TextMeshProUGUI deliveriesDoneText;
-    public IntVariable deliveriesDone;
-    private int currentScore;
+    public OneScriptToRuleThemAll gameData;
+
+    [Header("Events")]
+    public GameEvent onGameWon;
 
     private void Awake()
     {
-        PlayerScoreUpdate(deliveriesDoneText, deliveriesDone, "Deliveries Done: ", currentScore);
+        PlayerScoreUpdate(deliveriesDoneText, gameData.currentRoundNumber, "Deliveries Done: ");
     }
-    private void Update()
+
+    public void UpdateDeliveriesDone()
     {
-        if(currentScore != deliveriesDone.value)
+        if(gameData.currentRoundNumber < 5)
         {
-            PlayerScoreUpdate(deliveriesDoneText, deliveriesDone, "Deliveries Done: ", currentScore);
+            gameData.currentRoundNumber++;
+        } else if(gameData.currentRoundNumber == 5)
+        {
+            onGameWon.Raise();
         }
+        PlayerScoreUpdate(deliveriesDoneText, gameData.currentRoundNumber, "Deliveries Done: ");
     }
+
    
 }
