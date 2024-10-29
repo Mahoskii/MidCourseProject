@@ -31,7 +31,15 @@ MonoBehaviour:
   - {x: -798, y: 4078}
   trapSpawnPointsForThisRound: {x: 0, y: 0}
   trapPointsIndex: 0
-  TrapSpawnPoints: []
+  TrapSpawnPoints:
+  - {x: 915.9297, y: -1378.031}
+  - {x: 3850, y: 2674}
+  - {x: 5749.3, y: 908}
+  - {x: 1888, y: 1673}
+  - {x: 2756.8, y: 3961.3}
+  - {x: 5875.5, y: 3776.1}
+  - {x: 7745, y: -243.6}
+  - {x: 1777, y: -243}
   currentRoundNumber: 0
   roundNumberIndex: 0
   RoundNumber: 0100000002000000030000000400000005000000
