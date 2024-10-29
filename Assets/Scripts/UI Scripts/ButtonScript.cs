@@ -11,6 +11,8 @@ public class ButtonScript : MonoBehaviour
     public BoolVariable IsPaused;
     [Header("Events")]
     public GameEvent RaiseInstructions;
+    
+
 
     public void RoundOutcome()
     {
@@ -26,6 +28,7 @@ public class ButtonScript : MonoBehaviour
                 popUPWindow.SetActive(false);
                 IsPaused.value = false;
                 RaiseInstructions.Raise();
+                
 
                 break;
 
@@ -33,8 +36,11 @@ public class ButtonScript : MonoBehaviour
                 popUPWindow.SetActive(false);
                 IsPaused.value = false;
                 SceneManager.LoadSceneAsync("MainMenu");
+                
                 break;
 
         }
     }
+    
+
 }

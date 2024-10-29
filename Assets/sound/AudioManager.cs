@@ -23,6 +23,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip characterSwap;
     public AudioClip typing;
     public AudioClip startRound;
+    public AudioClip roundFail;
+    public AudioClip gameOver;
+
 
     private AudioClip currentSfxClip;
     private void Start()

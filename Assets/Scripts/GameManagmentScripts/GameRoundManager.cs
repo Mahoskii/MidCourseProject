@@ -61,10 +61,12 @@ public class GameRoundManager : MonoBehaviour
         //reset the timer to the correct time for this round.
         remainingTime.value = RoundTimesList[deliveriesDone.value];
         CallPopUp("Delivery Failed!", "You have failed to complete this delivery", "roundStart");
+        audioManager.PlaySFX(audioManager.roundFail);
         //if the player ran out of attempts, run the game over function that will reset the secne and show the lose message.
         if (attemptsLeft.value == 0 && deliveriesDone.value < 5)
         {
             CallPopUp("Oh no! :(", "You have been fired", "gameEnd");
+            audioManager.PlaySFX(audioManager.gameOver);
         }
     }
 
