@@ -6,10 +6,11 @@ public class DeliveryPoint : MonoBehaviour
 {
     AudioManager audioManager;
     public GameObject deliveryPoint;
-    public Floatvariable remainingTime;
-    public VectorVariable deliveryPointLocation;
-    public DeliveryPointScriptable DeliveryPointLocations;
-    public int deliveryIndex = 0;
+    //public Floatvariable remainingTime;
+    //public VectorVariable deliveryPointLocation;
+    public RoundScriptableObject[] RoundArray;
+    private int deliveryIndex = 1;
+
     [Header("Events")]
     public GameEvent onDeliveryPointReached;
 
@@ -20,22 +21,32 @@ public class DeliveryPoint : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(remainingTime.value > 0)
+        //if(remainingTime.value > 0)
+        //{
+        //    if (deliveryIndex < 5)
+        //    {
+        //        deliveryIndex++;
+        //    }
+        //    else if (deliveryIndex == 5)
+        //    {
+        //        deliveryIndex = 0;
+        //    }
+        //    collision.gameObject.transform.localScale = new Vector3(-250, 250, 250);
+        //    Time.timeScale = 0f;
+        //    collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        //    deliveryPoint.transform.position = DeliveryPointLocations.DeliveryPointsLocationList[deliveryIndex];
+        //}
+        ChangeLocation();
+        audioManager.PlaySFX(audioManager.levelComplete);
+        onDeliveryPointReached.Raise();
+    }
+
+    private void ChangeLocation()
+    {
+        deliveryPoint.transform.position = RoundArray[deliveryIndex].DeliveryPointLocation;
+        if(deliveryIndex < RoundArray.Length - 1)
         {
-            if(deliveryIndex < 5)
-            {
-                deliveryIndex++;
-            } else if( deliveryIndex == 5)
-            {
-                deliveryIndex = 0;
-            }
-            //collision.gameObject.transform.localScale = new Vector3(-250, 250, 250);
-            Time.timeScale = 0f;
-            //collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-            deliveryPoint.transform.position = DeliveryPointLocations.DeliveryPointsLocationList[deliveryIndex];
-            audioManager.PlaySFX(audioManager.levelComplete);
-            onDeliveryPointReached.Raise();
-            Debug.Log(deliveryIndex);
+            deliveryIndex++;
         }
     }
 }

@@ -9,6 +9,11 @@ public class RandomTrapSpawn : MonoBehaviour
 
     void Start()
     {
+        TrapSpawner();
+    }
+
+    public void TrapSpawner()
+    {
         whichTrapToSpawn = Random.Range(1, 4);
         TrapSpawning(whichTrapToSpawn);
     }
@@ -31,4 +36,6 @@ public class RandomTrapSpawn : MonoBehaviour
         }
 
     }
+
+ 
 }

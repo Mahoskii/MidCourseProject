@@ -8,9 +8,10 @@ public class ButtonScript : MonoBehaviour
 
     public StringVariables outcome;
     public GameObject popUPWindow;
-    public BoolVariable IsPaused;
+    //public BoolVariable IsPaused;
     [Header("Events")]
     public GameEvent RaiseInstructions;
+    public GameEvent RoundStartPopUp;
 
     public void RoundOutcome()
     {
@@ -18,20 +19,21 @@ public class ButtonScript : MonoBehaviour
         {
             case "onGoing":
                 popUPWindow.SetActive(false);
-                Time.timeScale = 1f;
-                IsPaused.value = false;
+                //Time.timeScale = 1f;
+                //IsPaused.value = false;
+                RaiseInstructions.Raise();
                 break;
 
             case "roundStart":
                 popUPWindow.SetActive(false);
-                IsPaused.value = false;
-                RaiseInstructions.Raise();
+                //IsPaused.value = false;
+                RoundStartPopUp.Raise();
 
                 break;
 
             case "gameEnd":
                 popUPWindow.SetActive(false);
-                IsPaused.value = false;
+                //IsPaused.value = false;
                 SceneManager.LoadSceneAsync("MainMenu");
                 break;
 

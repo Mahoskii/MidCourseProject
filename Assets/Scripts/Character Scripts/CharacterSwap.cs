@@ -16,13 +16,13 @@ public class CharacterSwap : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    void Start()
-    {
-        car.SetActive(true);
-        bike.SetActive(false);
-        pedestrian.SetActive(false);
+    //void Start()
+    //{
+    //    car.SetActive(true);
+    //    bike.SetActive(false);
+    //    pedestrian.SetActive(false);
 
-    }
+    //}
 
     private void Update()
     {
@@ -74,19 +74,15 @@ public class CharacterSwap : MonoBehaviour
         whichActive = 1;
         for (int i = 0; i < CharacterList.Length; i++)
         {
-            Time.timeScale = 1f;
             CharacterList[i].transform.position = transform.position;
             CharacterList[i].transform.localScale = new Vector3(250, 250, 250);
             CharacterList[i].SetActive(false);
-            Time.timeScale = 0f;
         }
 
     }
     public void SetSelfActive()
     {
-        Time.timeScale = 1f;
         car.SetActive(true);
         car.transform.localScale = new Vector3(250, 250, 250);
-        Time.timeScale = 0f;
     }
 }

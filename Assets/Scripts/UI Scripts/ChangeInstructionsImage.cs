@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 
-public class ChangeInstructionsImage : MonoBehaviour
+public class ChangeInstructionsImage : MonoBehaviour, ICounterUpdate
 {
     public int roundNumber = 0;
     public Image instructions;
@@ -15,18 +15,29 @@ public class ChangeInstructionsImage : MonoBehaviour
 
     AudioManager audioManager;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     public void DisplayInstructions()
     {
         instructionsImage.SetActive(true);
         confirmButton.SetActive(true);
         instructions.sprite = InstructionsList[roundNumber];
-        roundNumber++;
         audioManager.PlaySFX(audioManager.startRound);
     }
 
-    private void Awake()
+    public void UpdateCounter()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if(roundNumber < 5)
+        {
+            roundNumber++;
+        }
+        else
+        {
+            roundNumber = 4;
+        }
     }
 
 }

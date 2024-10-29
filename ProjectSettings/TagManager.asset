@@ -11,6 +11,7 @@ TagManager:
   - Bike
   - Pedestrian
   - Audio
+  - Timer
   layers:
   - Default
   - TransparentFX
