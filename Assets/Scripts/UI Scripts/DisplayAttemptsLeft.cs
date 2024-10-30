@@ -15,17 +15,26 @@ public class DisplayAttemptsLeft : UpdatePlayerScore
     {
         PlayerScoreUpdate(attemptsLeftText, gameData.attemptsCurrentlyLeft, "Attempts Left: ");
     }
-
+    private void Update()
+    {
+        Failed();
+    }
     public void UpdateAttempts()
     {
         if(gameData.attemptsCurrentlyLeft > 0)
         {
             gameData.attemptsCurrentlyLeft--;
-        } else if(gameData.attemptsCurrentlyLeft == 0)
+        }
+
+        PlayerScoreUpdate(attemptsLeftText, gameData.attemptsCurrentlyLeft, "Attempts Left: ");
+    }
+
+    public void Failed()
+    {
+        if (gameData.attemptsCurrentlyLeft == 0)
         {
             onGameLost.Raise();
         }
-        PlayerScoreUpdate(attemptsLeftText, gameData.attemptsCurrentlyLeft, "Attempts Left: ");
     }
 
 }

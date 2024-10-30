@@ -32,6 +32,9 @@ public class ButtonScript : MonoBehaviour
 
             case "gameEnd":
                 popUPWindow.SetActive(false);
+                gameData.mainIndex = 0;
+                gameData.currentRoundNumber = 0;
+                gameData.attemptsCurrentlyLeft = 3;
                 SceneManager.LoadSceneAsync("MainMenu");
                 
                 break;
