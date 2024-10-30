@@ -13,7 +13,7 @@ public class BikeLaneTrap : ITraps
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FailToPassTrap(collision, audioManager, "Car", "Pedestrian", gameData.timeForThisRound);
+        FailToPassTrap(collision, audioManager, "Car", "Pedestrian", gameData);
     }
 
 }

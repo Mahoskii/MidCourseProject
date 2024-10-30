@@ -15,6 +15,6 @@ public class HighwayTrap : ITraps
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FailToPassTrap(collision, audioManager, "Bike", "Pedestrian", gameData.timeForThisRound);
+        FailToPassTrap(collision, audioManager, "Bike", "Pedestrian", gameData);
     }
 }

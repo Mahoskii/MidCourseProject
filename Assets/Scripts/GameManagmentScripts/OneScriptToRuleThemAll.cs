@@ -29,9 +29,9 @@ public class OneScriptToRuleThemAll : ScriptableObject
     };
 
     //Traps spawn location control variables
-    public Vector2 trapSpawnPointsForThisRound;
+    public Vector3 trapSpawnPointsForThisRound;
     public int trapPointsIndex = 0;
-    public List<Vector2> TrapSpawnPoints = new List<Vector2>();
+    public List<Vector3> TrapSpawnPoints = new List<Vector3>();
 
     //Deliveries done controls
     public int currentRoundNumber;
