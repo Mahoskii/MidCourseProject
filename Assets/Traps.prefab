@@ -354,6 +354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6720503791530727133}
   - component: {fileID: 4138893868525421284}
+  - component: {fileID: -148942627228970743}
   m_Layer: 0
   m_Name: Traps
   m_TagString: Untagged
@@ -394,6 +395,34 @@ MonoBehaviour:
   HighwayTrap: {fileID: 1228850879369740703}
   BikeLaneTrap: {fileID: 2521799534453328397}
   RedLightTrap: {fileID: 7094922596781223543}
+--- !u!114 &-148942627228970743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674924661665466047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5008ce3126010e4091f6507d01873e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ec59766f337c33448b7249e0a7098aff, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4138893868525421284}
+        m_TargetAssemblyTypeName: RandomTrapSpawn, Assembly-CSharp
+        m_MethodName: SpawnTrap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7094922596781223543
 GameObject:
   m_ObjectHideFlags: 0

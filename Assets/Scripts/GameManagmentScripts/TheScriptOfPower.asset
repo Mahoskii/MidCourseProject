@@ -46,7 +46,7 @@ MonoBehaviour:
   attemptsCurrentlyLeft: 3
   attemptsLeftIndex: 0
   AttemptsNumber: 03000000020000000100000000000000
-  popUpTitleForThisCase: Your night shift is about to begin!
+  popUpTitleForThisCase: 'Delivery Numer: 3'
   popUpTitleIndex: 0
   PopUpTitleList:
   - Your night shift is about to begin!
@@ -55,7 +55,7 @@ MonoBehaviour:
   - Oh no! :(
   - Delivery Complete!
   - You win!
-  popUpContentForThisCase: can you make it through to the end?
+  popUpContentForThisCase: Ready? Start!
   popUpContentIndex: 0
   PopUpContentList:
   - can you make it through to the end?
@@ -64,7 +64,7 @@ MonoBehaviour:
   - You have been fired
   - You have completed your delivery successfully!
   - Wow, you managed to keep your entry level job another day... Well done?
-  popUpConditionForThisCase: roundStart
+  popUpConditionForThisCase: onGoing
   popUpConditionIndex: 0
   PopUpCondition:
   - roundStart
