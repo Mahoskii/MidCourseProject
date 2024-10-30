@@ -29,7 +29,7 @@ MonoBehaviour:
   - {x: 4738, y: 1135}
   - {x: 7288, y: 4025}
   - {x: -798, y: 4078}
-  trapSpawnPointsForThisRound: {x: -3890.07, y: -4292.031, z: 3.435243}
+  trapSpawnPointsForThisRound: {x: 0, y: 0, z: 0}
   trapPointsIndex: 0
   TrapSpawnPoints:
   - {x: 915, y: -1378, z: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   attemptsCurrentlyLeft: 3
   attemptsLeftIndex: 0
   AttemptsNumber: 03000000020000000100000000000000
-  popUpTitleForThisCase: You win!
+  popUpTitleForThisCase: Your night shift is about to begin!
   popUpTitleIndex: 0
   PopUpTitleList:
   - Your night shift is about to begin!
@@ -55,8 +55,7 @@ MonoBehaviour:
   - Oh no! :(
   - Delivery Complete!
   - You win!
-  popUpContentForThisCase: Wow, you managed to keep your entry level job another
-    day... Well done?
+  popUpContentForThisCase: can you make it through to the end?
   popUpContentIndex: 0
   PopUpContentList:
   - can you make it through to the end?
@@ -65,7 +64,7 @@ MonoBehaviour:
   - You have been fired
   - You have completed your delivery successfully!
   - Wow, you managed to keep your entry level job another day... Well done?
-  popUpConditionForThisCase: gameEnd
+  popUpConditionForThisCase: roundStart
   popUpConditionIndex: 0
   PopUpCondition:
   - roundStart
