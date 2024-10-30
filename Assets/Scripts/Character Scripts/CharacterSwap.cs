@@ -83,5 +83,6 @@ public class CharacterSwap : MonoBehaviour
     public void SetSelfActive()
     {
         car.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
