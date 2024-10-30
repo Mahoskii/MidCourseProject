@@ -16,16 +16,26 @@ public class DisplayDeliveriesDone : UpdatePlayerScore
         PlayerScoreUpdate(deliveriesDoneText, gameData.currentRoundNumber, "Deliveries Done: ");
     }
 
+    private void Update()
+    {
+        GoalReached();
+    }
+
     public void UpdateDeliveriesDone()
     {
         if(gameData.currentRoundNumber < 5)
         {
             gameData.currentRoundNumber++;
-        } else if(gameData.currentRoundNumber == 5)
+        }
+        PlayerScoreUpdate(deliveriesDoneText, gameData.currentRoundNumber, "Deliveries Done: ");
+    }
+
+    public void GoalReached()
+    {
+        if (gameData.currentRoundNumber == 5)
         {
             onGameWon.Raise();
         }
-        PlayerScoreUpdate(deliveriesDoneText, gameData.currentRoundNumber, "Deliveries Done: ");
     }
 
    

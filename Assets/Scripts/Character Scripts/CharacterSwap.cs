@@ -74,7 +74,7 @@ public class CharacterSwap : MonoBehaviour
         whichActive = 1;
         for (int i = 0; i < CharacterList.Length; i++)
         {
-            CharacterList[i].transform.position = transform.position;
+            CharacterList[i].transform.position = new Vector3(0, 0, 0);
             CharacterList[i].transform.localScale = new Vector3(250, 250, 250);
             CharacterList[i].SetActive(false);
         }

@@ -25,10 +25,7 @@ public class DeliveryPoint : MonoBehaviour
             if(gameData.mainIndex < 4)
             {
                 gameData.mainIndex++;
-            } else if(gameData.mainIndex == 4)
-            {
-                gameData.mainIndex = 0;
-            }
+            } 
             deliveryPoint.transform.position = gameData.DeliveryHousePoints[gameData.mainIndex];
             audioManager.PlaySFX(audioManager.levelComplete);
             onDeliveryPointReached.Raise();
