@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089d7a9da0d37ab4a9b5fbd5543044b4, type: 3}
   m_Name: TheScriptOfPower
   m_EditorClassIdentifier: 
-  mainIndex: 0
-  timeForThisRound: 0
+  mainIndex: 1
+  timeForThisRound: 36
   timeIndex: 0
   RoundTimes:
   - 31
@@ -29,24 +29,24 @@ MonoBehaviour:
   - {x: 4738, y: 1135}
   - {x: 7288, y: 4025}
   - {x: -798, y: 4078}
-  trapSpawnPointsForThisRound: {x: 0, y: 0}
+  trapSpawnPointsForThisRound: {x: 0, y: 0, z: 0}
   trapPointsIndex: 0
   TrapSpawnPoints:
-  - {x: 915.9297, y: -1378.031}
-  - {x: 3850, y: 2674}
-  - {x: 5749.3, y: 908}
-  - {x: 1888, y: 1673}
-  - {x: 2756.8, y: 3961.3}
-  - {x: 5875.5, y: 3776.1}
-  - {x: 7745, y: -243.6}
-  - {x: 1777, y: -243}
+  - {x: 915, y: -1378, z: 0}
+  - {x: 5749, y: 908, z: 0}
+  - {x: 1888, y: 1673, z: 0}
+  - {x: 2756, y: 3961, z: 0}
+  - {x: 5875, y: 3776, z: 0}
+  - {x: 7745, y: -243, z: 0}
+  - {x: 1777, y: -243, z: 0}
+  - {x: 3850, y: 2674, z: 0}
   currentRoundNumber: 0
   roundNumberIndex: 0
   RoundNumber: 0100000002000000030000000400000005000000
   attemptsCurrentlyLeft: 3
   attemptsLeftIndex: 0
   AttemptsNumber: 03000000020000000100000000000000
-  popUpTitleForThisCase: 'Delivery Numer: 1'
+  popUpTitleForThisCase: Your night shift is about to begin!
   popUpTitleIndex: 0
   PopUpTitleList:
   - Your night shift is about to begin!
@@ -55,7 +55,7 @@ MonoBehaviour:
   - Oh no! :(
   - Delivery Complete!
   - You win!
-  popUpContentForThisCase: Ready? Start!
+  popUpContentForThisCase: can you make it through to the end?
   popUpContentIndex: 0
   PopUpContentList:
   - can you make it through to the end?
@@ -64,7 +64,7 @@ MonoBehaviour:
   - You have been fired
   - You have completed your delivery successfully!
   - Wow, you managed to keep your entry level job another day... Well done?
-  popUpConditionForThisCase: onGoing
+  popUpConditionForThisCase: roundStart
   popUpConditionIndex: 0
   PopUpCondition:
   - roundStart

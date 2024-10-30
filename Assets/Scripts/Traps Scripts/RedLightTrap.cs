@@ -14,6 +14,6 @@ public class RedLightTrap : ITraps
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FailToPassTrap(collision, audioManager, "Car", "Bike", gameData.timeForThisRound);
+        FailToPassTrap(collision, audioManager, "Car", "Bike", gameData);
     }
 }

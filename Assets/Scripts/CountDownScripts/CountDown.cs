@@ -7,7 +7,7 @@ public class CountDown : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public OneScriptToRuleThemAll gameData;
-    public float remainingTime = 0;
+    //public float remainingTime = 0;
     private bool isThereTime = true;
     [Header("Events")]
     public GameEvent onTimeOver;
@@ -20,23 +20,23 @@ public class CountDown : MonoBehaviour
 
     void Update()
     {
-        if (remainingTime > 0)
+        if (gameData.timeForThisRound > 0)
         {
-            remainingTime -= Time.deltaTime;
-            TimeDisplay(remainingTime);
-            if (remainingTime <= 0.01)
+            gameData.timeForThisRound -= Time.deltaTime;
+            TimeDisplay(gameData.timeForThisRound);
+            if (gameData.timeForThisRound <= 0.01)
             {
                 onTimeOver.Raise();
             }
 
         }
-        else if (remainingTime <= 0)
+        else if (gameData.timeForThisRound <= 0)
         {
-            remainingTime = 0;
-            TimeDisplay(remainingTime);
-            if (remainingTime <= 0 && isThereTime)
+            gameData.timeForThisRound = 0;
+            TimeDisplay(gameData.timeForThisRound);
+            if (gameData.timeForThisRound <= 0 && isThereTime)
             {
-                remainingTime += 0.2f;
+                gameData.timeForThisRound += 0.2f;
             }
         }
     }
@@ -50,7 +50,8 @@ public class CountDown : MonoBehaviour
 
     public void UpdateTimer()
     {
-        remainingTime = gameData.RoundTimes[gameData.mainIndex];
+        gameData.timeForThisRound = gameData.RoundTimes[gameData.mainIndex];
+        //remainingTime = gameData.timeForThisRound;
     }
 
     public void TurnSelfOff()
