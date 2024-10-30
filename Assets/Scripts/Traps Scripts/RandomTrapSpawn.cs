@@ -7,10 +7,10 @@ public class RandomTrapSpawn : MonoBehaviour
     public GameObject HighwayTrap, BikeLaneTrap, RedLightTrap;
     int whichTrapToSpawn = 0;
 
-    void Start()
-    {
-        SpawnTrap();
-    }
+    //void Start()
+    //{
+    //    SpawnTrap();
+    //}
 
     private void OnEnable()
     {
@@ -28,15 +28,30 @@ public class RandomTrapSpawn : MonoBehaviour
         switch (whichTrapToSpawn)
         {
             case 1:
-                HighwayTrap.SetActive(true);
+
+                if(!BikeLaneTrap.activeSelf && !RedLightTrap.activeSelf)
+                {
+                    HighwayTrap.SetActive(true);
+                }
+
                 break;
 
             case 2:
-                BikeLaneTrap.SetActive(true);
+
+                if(!HighwayTrap.activeSelf && !RedLightTrap.activeSelf)
+                {
+                    BikeLaneTrap.SetActive(true);
+                }
+                
                 break;
 
             case 3:
-                RedLightTrap.SetActive(true);
+
+                if(!HighwayTrap.activeSelf && !BikeLaneTrap.activeSelf)
+                {
+                    RedLightTrap.SetActive(true);
+                }
+                
                 break;
         }
 
