@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089d7a9da0d37ab4a9b5fbd5543044b4, type: 3}
   m_Name: TheScriptOfPower
   m_EditorClassIdentifier: 
-  mainIndex: 0
-  timeForThisRound: 0
+  mainIndex: 1
+  timeForThisRound: 34.657837
   timeIndex: 0
   RoundTimes:
   - 31
@@ -32,21 +32,22 @@ MonoBehaviour:
   trapSpawnPointsForThisRound: {x: 0, y: 0, z: 0}
   trapPointsIndex: 0
   TrapSpawnPoints:
-  - {x: 915, y: -1378, z: 0}
-  - {x: 5749, y: 908, z: 0}
-  - {x: 1888, y: 1673, z: 0}
-  - {x: 2756, y: 3961, z: 0}
-  - {x: 5875, y: 3776, z: 0}
-  - {x: 7745, y: -243, z: 0}
+  - {x: 392, y: 3961, z: 0}
+  - {x: 5749, y: 1000, z: 0}
+  - {x: 1751.4, y: 1673, z: 0}
+  - {x: 2676, y: 3961, z: 0}
+  - {x: 5875, y: 3887, z: 0}
+  - {x: 5757, y: -243, z: 0}
   - {x: 1777, y: -243, z: 0}
-  - {x: 3850, y: 2674, z: 0}
-  currentRoundNumber: 0
+  - {x: 3850, y: 2771, z: 0}
+  - {x: 695, y: 1691, z: 0}
+  currentRoundNumber: 1
   roundNumberIndex: 0
   RoundNumber: 0100000002000000030000000400000005000000
   attemptsCurrentlyLeft: 3
   attemptsLeftIndex: 0
   AttemptsNumber: 03000000020000000100000000000000
-  popUpTitleForThisCase: 'Delivery Numer: 3'
+  popUpTitleForThisCase: 'Delivery Numer: 2'
   popUpTitleIndex: 0
   PopUpTitleList:
   - Your night shift is about to begin!
