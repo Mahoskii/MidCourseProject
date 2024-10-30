@@ -10,6 +10,7 @@ public class ButtonScript : MonoBehaviour
     public GameObject popUPWindow;
     [Header("Events")]
     public GameEvent RaiseInstructions;
+    public GameEvent RoundStartPopUp;
     
 
 
@@ -19,12 +20,13 @@ public class ButtonScript : MonoBehaviour
         {
             case "onGoing":
                 popUPWindow.SetActive(false);
+                RaiseInstructions.Raise();
 
                 break;
 
             case "roundStart":
                 popUPWindow.SetActive(false);
-                RaiseInstructions.Raise();
+                RoundStartPopUp.Raise();
 
                 break;
 
