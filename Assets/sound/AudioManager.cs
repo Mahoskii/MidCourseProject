@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip roundFail;
     public AudioClip gameOver;
 
+    
 
     private AudioClip currentSfxClip;
     private void Start()
@@ -38,6 +39,14 @@ public class AudioManager : MonoBehaviour
     {
         if (clip != null)
         {
+            if (clip == gameOver)
+            {
+                SfxSourse.volume = 0.1f;
+            }
+            else
+            {
+                SfxSourse.volume = 1f; 
+            }
             SfxSourse.PlayOneShot(clip);
             currentSfxClip = clip; 
         }
